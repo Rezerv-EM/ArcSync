@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ArcSync — облачное сохранение сейвов игр для Windows (синхронизация сохранений)</title>
+<meta name="description" content="ArcSync — бесплатная программа для Windows: облачное сохранение сейвов игр и синхронизация сохранений между компьютерами. Копии уходят в вашу папку OneDrive, Google Drive или Яндекс.Диска и возвращаются на любом ПК. Как Steam Cloud, но для любых игр. Своих серверов нет, телеметрии нет.">
+<meta name="keywords" content="облачное сохранение сейвов, синхронизация сохранений игр, бэкап сейвов, перенос сохранений на другой компьютер, сохранение прогресса игр в облако, steam cloud для любых игр, программа для сохранения сейвов, резервная копия сохранений игр, синхронизация сейвов между компьютерами">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ArcSync — облачное сохранение сейвов игр для Windows">
+<meta property="og:description" content="Сохранения уезжают в вашу облачную папку и возвращаются на любом компьютере. Бесплатно, без серверов и телеметрии.">
+<meta property="og:url" content="https://rezerv-em.github.io/ArcSync/">
+<style>
+  :root{--bg:#0a0b12;--card:#151628;--card2:#1b1c33;--line:#2a2c47;--txt:#eef0f8;--dim:#a7abc4;--acc:#6c60ff;--cyan:#2fd8f0}
+  *{box-sizing:border-box}
+  body{margin:0;background:radial-gradient(1200px 600px at 50% -10%,#1d1a3a 0%,var(--bg) 60%);color:var(--txt);
+       font-family:"Segoe UI",Roboto,Arial,sans-serif;line-height:1.55}
+  .wrap{max-width:960px;margin:0 auto;padding:40px 20px 64px}
+  header{display:flex;align-items:center;gap:16px;margin-bottom:28px}
+  header img{width:72px;height:72px;border-radius:16px}
+  h1{font-size:30px;margin:0 0 6px}
+  .sub{color:var(--dim);font-size:16px;margin:0}
+  .cta{display:flex;gap:12px;flex-wrap:wrap;margin:26px 0 10px}
+  .btn{display:inline-block;padding:14px 22px;border-radius:12px;text-decoration:none;font-weight:600}
+  .btn-main{background:linear-gradient(90deg,var(--acc),var(--cyan));color:#0a0b12}
+  .btn-ghost{border:1px solid var(--line);color:var(--txt);background:var(--card)}
+  .note{color:var(--dim);font-size:13px}
+  h2{font-size:21px;margin:38px 0 12px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+  .card h3{margin:0 0 8px;font-size:16px}
+  .card p{margin:0;color:var(--dim);font-size:14px}
+  ol{padding-left:20px}ol li{margin:8px 0}
+  details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:10px 0}
+  summary{cursor:pointer;font-weight:600}
+  details p{color:var(--dim);font-size:14px;margin:10px 0 0}
+  footer{margin-top:44px;border-top:1px solid var(--line);padding-top:18px;color:var(--dim);font-size:13px}
+  a{color:var(--cyan)}
+  .warn{background:#241a1a;border:1px solid #4a2a2a;border-radius:12px;padding:14px 16px;color:#ffd9d9;font-size:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <img src="icon.png" alt="ArcSync — облачное сохранение сейвов игр">
+    <div>
+      <h1>ArcSync — облачное сохранение сейвов игр для Windows</h1>
+      <p class="sub">Синхронизация сохранений между компьютерами: копии уезжают в вашу облачную папку и возвращаются на любом ПК. Как Steam Cloud, только для любых игр.</p>
+    </div>
+  </header>
+
+  <div class="cta">
+    <a class="btn btn-main" href="https://github.com/Rezerv-EM/ArcSync/releases/latest">Скачать бесплатно для Windows</a>
+    <a class="btn btn-ghost" href="https://github.com/Rezerv-EM/ArcSync">Исходная страница проекта на GitHub</a>
+  </div>
+  <p class="note">Windows 10 и 11, 64 бита · 43 МБ · установка одной кнопкой · интерфейс на русском</p>
+
+  <h2>Что делает программа</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Защищает сохранения</h3>
+      <p>Находит, где каждая игра хранит сейвы, следит за изменениями и складывает копии в вашу облачную папку. Прогресс не потеряется при переустановке Windows или поломке диска.</p>
+    </div>
+    <div class="card">
+      <h3>Переносит прогресс на другой компьютер</h3>
+      <p>Поставили игру на новый ПК, указали ту же облачную папку — ArcSync вернёт сохранения туда, куда игра их ждёт.</p>
+    </div>
+    <div class="card">
+      <h3>Собирает библиотеку игр</h3>
+      <p>Показывает игры, которые реально установлены: Steam, GOG, Epic, Microsoft Store и установленные вручную. Лончеры и эмуляторы в список не попадают.</p>
+    </div>
+    <div class="card">
+      <h3>Держит резервные копии</h3>
+      <p>Архив копий по каждой игре, восстановление одной кнопкой и журнал: что, когда и куда синхронизировалось.</p>
+    </div>
+    <div class="card">
+      <h3>Работает с любым облаком</h3>
+      <p>OneDrive, Google Drive, Яндекс.Диск, Dropbox, MEGA, Nextcloud, Mail.ru — или любая папка, которая у вас уже синхронизируется.</p>
+    </div>
+    <div class="card">
+      <h3>Не мешает играть</h3>
+      <p>Живёт в трее и синхронизирует по событию: запуск игры, выход из игры, завершение работы Windows. Игры не тормозит.</p>
+    </div>
+  </div>
+
+  <h2>Как это работает</h2>
+  <ol>
+    <li>Скачайте установщик и запустите его. Windows покажет предупреждение SmartScreen — это обычное дело для программ без платной подписи: «Подробнее» → «Выполнить в любом случае».</li>
+    <li>Укажите облачную папку (OneDrive, Google Drive, Яндекс.Диск — или нажмите «Предложить папку», и ArcSync найдёт её сам).</li>
+    <li>Играйте. Сохранения копируются сами, без единого нажатия.</li>
+  </ol>
+
+  <h2>Приватность</h2>
+  <div class="grid">
+    <div class="card"><h3>Своих серверов нет</h3><p>Сохранения уходят только в ту папку, которую выбрали вы. У программы нет облака и нет аккаунтов.</p></div>
+    <div class="card"><h3>Телеметрии нет</h3><p>Никакой статистики, рекламы и слежки. Данные программы лежат на вашем компьютере в %LOCALAPPDATA%\ArcSync.</p></div>
+    <div class="card"><h3>Облако не чистится</h3><p>ArcSync только добавляет и обновляет свои копии. Чужое в облачной папке не трогается и не удаляется.</p></div>
+  </div>
+
+  <h2>Частые вопросы</h2>
+  <details><summary>Это как Steam Cloud? В чём разница?</summary>
+    <p>Steam Cloud работает только с играми из Steam. ArcSync делает то же самое для любых игр: из Steam, GOG, Epic, Microsoft Store и установленных вручную. Игры с лицензией он не трогает — у них своё облако, они просто показываются отдельным списком.</p></details>
+  <details><summary>Нужно ли что-то доустанавливать?</summary>
+    <p>Нет. Внутри установщика уже есть всё необходимое, включая среду выполнения. Нужны только права администратора — без них Windows не даёт записывать сохранения в защищённые папки.</p></details>
+  <details><summary>Куда попадают мои сохранения?</summary>
+    <p>В папку <code>ArcSync</code> внутри вашей облачной папки. Её можно открыть прямо из программы кнопкой «Открыть облачную папку».</p></details>
+  <details><summary>А если игра удалена?</summary>
+    <p>Копии остаются в «Резервных копиях» и в облаке — синхронизация продолжает их защищать, даже если сама игра удалена.</p></details>
+  <details><summary>Почему Windows ругается при установке?</summary>
+    <p>Установщик не подписан платным сертификатом, поэтому SmartScreen предупреждает о «неизвестном издателе». Проверить файл можно по SHA-256: он указан рядом с установщиком на странице релиза.</p></details>
+
+  <h2>Системные требования</h2>
+  <p class="note">Windows 10 (сборка 19041 и новее) или Windows 11 · 64 бита · около 160 МБ на диске · права администратора. Ставить .NET или что-то ещё не нужно.</p>
+
+  <div class="warn">Скачивайте ArcSync только со <a href="https://github.com/Rezerv-EM/ArcSync/releases/latest">страницы релизов на GitHub</a>. Копия из другого места может быть изменена.</div>
+
+  <footer>
+    ArcSync · <a href="https://github.com/Rezerv-EM/ArcSync">GitHub</a> ·
+    <a href="https://github.com/Rezerv-EM/ArcSync/blob/main/README.ru.md">Описание проекта</a> ·
+    <a href="https://github.com/Rezerv-EM/ArcSync/blob/main/EULA.txt">Условия использования</a><br>
+    Программа бесплатная. Исходный код не публикуется, изменённые сборки распространять нельзя.
+  </footer>
+
+</div>
+</body>
+</html>
