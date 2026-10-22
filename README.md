@@ -31,8 +31,8 @@ other folder that already syncs for you.
 
 ## Install
 
-1. Download **`ArcSync_Setup_0.1.exe`** from the [Releases](../../releases/latest) page —
-   it is the only file you need.
+1. Download the latest **`ArcSync_Setup_<version>.exe`** from the
+   [Releases](../../releases/latest) page — it is the only file you need.
 2. Run it. Windows will show a blue **SmartScreen** warning — that is expected for
    software without a paid code-signing certificate. Click **"More info" → "Run anyway"**.
    See [Verifying the download](#verifying-the-download) to check the file yourself.
@@ -104,7 +104,7 @@ SHA-256 — see below.
 `SHA256SUMS.txt` sits next to the installer in the release. Compare:
 
 ```
-certutil -hashfile ArcSync_Setup_0.1.exe SHA256
+certutil -hashfile ArcSync_Setup_<version>.exe SHA256
 ```
 
 The hash must match the line in `SHA256SUMS.txt`. Always download ArcSync from this
