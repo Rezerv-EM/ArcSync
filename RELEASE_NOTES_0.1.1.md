@@ -1,57 +1,42 @@
-# ArcSync 0.1.1 — автозапуск и «невидимый» старт
+# v0.1.1
 
-**Файл:** `ArcSync_Setup_0.1.1.exe`
-**Что исправлено:** программа не запускалась вместе с Windows, и после перезагрузки
-её не было ни в трее, ни в процессах — хотя галочка «Запускать вместе с Windows» стояла.
+**Autostart**
+- Fixed: the "Start with Windows" checkbox in the installer did nothing — it now creates the
+  elevated logon task (and removes it when unchecked)
+- Fixed: autostart silently died after a system clock correction — the task trigger was
+  created with a start boundary in the future; it is now registered from XML with a fixed
+  past boundary
+- Fixed: the autostart task was skipped on battery and killed by Task Scheduler after 72 h
+- Fixed: double-clicking the shortcut while the app is in the tray now opens the window
 
-## Что было не так
+**Startup**
+- Fixed: on a cold start the window stayed invisible for minutes — the installed-games index
+  is now rebuilt in the background instead of blocking the UI thread
+- Fixed: the tray icon is created before the first page loads, so the app is always reachable
 
-1. **Галочка в установщике ничего не делала.** Установщик только удалял устаревшую
-   запись автозапуска, а задачу планировщика (единственный рабочий способ для программы
-   с правами администратора) никто не создавал. Программа при этом не знала, чего хотел
-   человек, поэтому и не замечала, что автозапуска нет.
-2. **Холодный старт блокировал окно.** «Главная» при построении списка игр запускала
-   полный обход диска прямо в потоке интерфейса. Пока он шёл (минуты), не появлялось ни
-   окно, ни иконка в трее — процесс работал, грузил ядро и читал диск, но найти его было
-   невозможно.
+**Library**
+- Fixed: an installed Unreal Engine (Epic Games\UE_5.8) was listed as a game
+- Fixed: an in-progress Steam download (`steamapps\downloading`) was listed as a game
+- Fixed: folders inside a git working tree (dev builds) were listed as games
+- Fixed: game subfolders (e.g. Call of Duty `sp26`) were listed as separate games and hid
+  the real game behind a "container"
+- Fixed: folders without a single executable were listed as games
 
-## Что сделано
+**UI**
+- Fixed: the first-run guide note was cut off instead of wrapping
+- Fixed: a ghost window frame was drawn around the splash card
 
-* Установщик теперь **реально включает автозапуск**: создаёт задачу планировщика с
-  наивысшими правами (ArcSync.exe --autostart-enable). Без галочки — так же корректно
-  снимает (--autostart-disable).
-* Настройка автозапуска **запоминается** (config.json → "autostart"). Если задачу кто-то
-  удалит или её потеряет переустановка, программа восстановит её при первом запуске.
-* Иконка в трее создаётся **до** загрузки страниц — программа больше не может остаться
-  невидимой.
-* Индекс установленных игр обновляется **в фоне**: интерфейс открывается сразу и
-  показывает то, что уже известно, а список догоняет сам через пару секунд.
-* Повторный запуск (двойной клик по ярлыку, когда программа уже в трее) **показывает
-  окно** вместо молчаливого выхода второго процесса.
-* README больше не привязан к номеру версии в имени файла.
+**Other**
+- The version is now defined in one place and the app reports its real version
+- README is no longer tied to a specific version in the download file name
 
-## Установка
+---
 
-1. Скачайте `ArcSync_Setup_0.1.1.exe` ниже и запустите — он обновит установленную копию.
-2. Windows покажет **SmartScreen** («Windows защитила ваш компьютер») — это ожидаемо:
-   установщик не подписан платным сертификатом. Нажмите **«Подробнее» → «Выполнить в
-   любом случае»**.
-3. Галочку «Запускать вместе с Windows» можно оставить включённой — теперь она работает.
-   Проверить можно в программе: **Настройки → Автозапуск**.
+Requires Windows 10 (build 19041+) or Windows 11, 64-bit. The installer is not code-signed:
+SmartScreen will warn about an unknown publisher — that is expected.
 
-**Требования:** Windows 10 (сборка 19041+) или Windows 11, 64 бита.
-
-## Проверка скачанного файла
-
-```
+```text
 certutil -hashfile ArcSync_Setup_0.1.1.exe SHA256
 ```
 
-Хеш должен совпасть со строкой в `SHA256SUMS.txt` из этого релиза.
-
-## Известные ограничения
-
-* Установщик не подписан — SmartScreen будет предупреждать.
-* Интерфейс пока на русском языке.
-* Если программа не появилась в трее, посмотрите в области скрытых значков (стрелка «^»
-  у часов): Windows 11 по умолчанию прячет новые иконки.
+Compare with `SHA256SUMS.txt` attached to this release.
