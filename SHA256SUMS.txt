@@ -1,1 +1,1 @@
-58f68aeb074ebf2a35703f8c047d952ddef457b2f3db3bc2dfd934263ed49ab9  ArcSync_Setup_0.1.1.exe
+573b892f6c82b050d843f9cc9b703f11f9de5d9fc22e029d47bc4e4b5a1de37b  ArcSync_Setup_0.1.2.exe
