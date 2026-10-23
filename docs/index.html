@@ -2,126 +2,100 @@
 <html lang="ru">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ArcSync — облачное сохранение сейвов игр для Windows (синхронизация сохранений)</title>
-<meta name="description" content="ArcSync — бесплатная программа для Windows: облачное сохранение сейвов игр и синхронизация сохранений между компьютерами. Копии уходят в вашу папку OneDrive, Google Drive или Яндекс.Диска и возвращаются на любом ПК. Как Steam Cloud, но для любых игр. Своих серверов нет, телеметрии нет.">
-<meta name="keywords" content="облачное сохранение сейвов, синхронизация сохранений игр, бэкап сейвов, перенос сохранений на другой компьютер, сохранение прогресса игр в облако, steam cloud для любых игр, программа для сохранения сейвов, резервная копия сохранений игр, синхронизация сейвов между компьютерами">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#080a0d">
+<title>ArcSync — твои игры. Твой прогресс. Твоё облако.</title>
+<meta name="description" content="Бесплатный лаунчер и синхронизатор сохранений для Windows. ArcSync находит сейвы, копирует их в твою облачную папку и помогает продолжить игру на другом ПК. Без аккаунта ArcSync и телеметрии.">
+<link rel="canonical" href="https://rezerv-em.github.io/ArcSync/">
+<link rel="icon" href="assets/icon.png" type="image/png">
+<link rel="preload" href="assets/Manrope.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="styles.css">
 <meta property="og:type" content="website">
-<meta property="og:title" content="ArcSync — облачное сохранение сейвов игр для Windows">
-<meta property="og:description" content="Сохранения уезжают в вашу облачную папку и возвращаются на любом компьютере. Бесплатно, без серверов и телеметрии.">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="ArcSync — играй дальше. Не начинай сначала.">
+<meta property="og:description" content="Все игры рядом. Сейвы — в твоём облаке. Бесплатно для Windows.">
 <meta property="og:url" content="https://rezerv-em.github.io/ArcSync/">
-<style>
-  :root{--bg:#0a0b12;--card:#151628;--card2:#1b1c33;--line:#2a2c47;--txt:#eef0f8;--dim:#a7abc4;--acc:#6c60ff;--cyan:#2fd8f0}
-  *{box-sizing:border-box}
-  body{margin:0;background:radial-gradient(1200px 600px at 50% -10%,#1d1a3a 0%,var(--bg) 60%);color:var(--txt);
-       font-family:"Segoe UI",Roboto,Arial,sans-serif;line-height:1.55}
-  .wrap{max-width:960px;margin:0 auto;padding:40px 20px 64px}
-  header{display:flex;align-items:center;gap:16px;margin-bottom:28px}
-  header img{width:72px;height:72px;border-radius:16px}
-  h1{font-size:30px;margin:0 0 6px}
-  .sub{color:var(--dim);font-size:16px;margin:0}
-  .cta{display:flex;gap:12px;flex-wrap:wrap;margin:26px 0 10px}
-  .btn{display:inline-block;padding:14px 22px;border-radius:12px;text-decoration:none;font-weight:600}
-  .btn-main{background:linear-gradient(90deg,var(--acc),var(--cyan));color:#0a0b12}
-  .btn-ghost{border:1px solid var(--line);color:var(--txt);background:var(--card)}
-  .note{color:var(--dim);font-size:13px}
-  h2{font-size:21px;margin:38px 0 12px}
-  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
-  .card h3{margin:0 0 8px;font-size:16px}
-  .card p{margin:0;color:var(--dim);font-size:14px}
-  ol{padding-left:20px}ol li{margin:8px 0}
-  details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:10px 0}
-  summary{cursor:pointer;font-weight:600}
-  details p{color:var(--dim);font-size:14px;margin:10px 0 0}
-  footer{margin-top:44px;border-top:1px solid var(--line);padding-top:18px;color:var(--dim);font-size:13px}
-  a{color:var(--cyan)}
-  .warn{background:#241a1a;border:1px solid #4a2a2a;border-radius:12px;padding:14px 16px;color:#ffd9d9;font-size:14px}
-</style>
+<meta property="og:image" content="https://rezerv-em.github.io/ArcSync/assets/social.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<script src="app.js" defer></script>
 </head>
 <body>
-<div class="wrap">
-
-  <header>
-    <img src="icon.png" alt="ArcSync — облачное сохранение сейвов игр">
-    <div>
-      <h1>ArcSync — облачное сохранение сейвов игр для Windows</h1>
-      <p class="sub">Синхронизация сохранений между компьютерами: копии уезжают в вашу облачную папку и возвращаются на любом ПК. Как Steam Cloud, только для любых игр.</p>
-    </div>
-  </header>
-
-  <div class="cta">
-    <a class="btn btn-main" href="https://github.com/Rezerv-EM/ArcSync/releases/latest">Скачать бесплатно для Windows</a>
-    <a class="btn btn-ghost" href="https://github.com/Rezerv-EM/ArcSync">Исходная страница проекта на GitHub</a>
+<a class="skip" href="#main">Перейти к содержимому</a>
+<header class="header">
+ <div class="nav wrap">
+  <a class="brand" href="#" aria-label="ArcSync — на главную"><img src="assets/icon.png" width="40" height="40" alt=""><span>ArcSync<span class="brand-dot">.</span></span></a>
+  <nav class="desktop-nav" aria-label="Основная навигация"><a href="#experience">Интерфейс</a><a href="#cloud">Возможности</a><a href="#how">Как это работает</a><a href="#faq">Вопросы</a></nav>
+  <div class="nav-actions"><a class="nav-download" href="https://github.com/Rezerv-EM/ArcSync/releases/latest">Скачать <span aria-hidden="true">↗</span></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Открыть меню"><span></span><span></span></button></div>
+ </div>
+ <nav id="mobile-nav" class="mobile-nav" aria-label="Мобильная навигация" hidden><a href="#experience">Интерфейс</a><a href="#cloud">Возможности</a><a href="#how">Как это работает</a><a href="#faq">Частые вопросы</a><a href="https://github.com/Rezerv-EM/ArcSync">Проект на GitHub ↗</a></nav>
+</header>
+<main id="main">
+<section class="hero" aria-labelledby="hero-title">
+ <div class="hero-glow" aria-hidden="true"></div><div class="hero-floor" aria-hidden="true"></div>
+ <div class="wrap hero-grid">
+  <div class="hero-copy">
+   <p class="eyebrow"><span class="live-dot"></span> ЛАУНЧЕР + ОБЛАЧНЫЕ СЕЙВЫ</p>
+   <h1 id="hero-title">Играй дальше.<br>Не начинай<br><span>сначала.</span></h1>
+   <p class="hero-desc">Собери игры в одну библиотеку.<br>А сохранения доверь своему облаку —<br class="desktop-br"> ArcSync позаботится об остальном.</p>
+   <div class="hero-buttons"><a class="button button-main" href="https://github.com/Rezerv-EM/ArcSync/releases/latest"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-4-4 4 4 4-4M5 16v5h14v-5"/></svg>Скачать для Windows</a><a class="text-link" href="#experience">Посмотреть внутри <span aria-hidden="true">↘</span></a></div>
+   <p class="micro">Бесплатно · Windows 10 / 11 · x64</p>
   </div>
-  <p class="note">Windows 10 и 11, 64 бита · 43 МБ · установка одной кнопкой · интерфейс на русском</p>
-
-  <h2>Что делает программа</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>Защищает сохранения</h3>
-      <p>Находит, где каждая игра хранит сейвы, следит за изменениями и складывает копии в вашу облачную папку. Прогресс не потеряется при переустановке Windows или поломке диска.</p>
-    </div>
-    <div class="card">
-      <h3>Переносит прогресс на другой компьютер</h3>
-      <p>Поставили игру на новый ПК, указали ту же облачную папку — ArcSync вернёт сохранения туда, куда игра их ждёт.</p>
-    </div>
-    <div class="card">
-      <h3>Собирает библиотеку игр</h3>
-      <p>Показывает игры, которые реально установлены: Steam, GOG, Epic, Microsoft Store и установленные вручную. Лончеры и эмуляторы в список не попадают.</p>
-    </div>
-    <div class="card">
-      <h3>Держит резервные копии</h3>
-      <p>Архив копий по каждой игре, восстановление одной кнопкой и журнал: что, когда и куда синхронизировалось.</p>
-    </div>
-    <div class="card">
-      <h3>Работает с любым облаком</h3>
-      <p>OneDrive, Google Drive, Яндекс.Диск, Dropbox, MEGA, Nextcloud, Mail.ru — или любая папка, которая у вас уже синхронизируется.</p>
-    </div>
-    <div class="card">
-      <h3>Не мешает играть</h3>
-      <p>Живёт в трее и синхронизирует по событию: запуск игры, выход из игры, завершение работы Windows. Игры не тормозит.</p>
-    </div>
+  <div class="hero-art" aria-label="Трёхмерная композиция из настоящих экранов ArcSync">
+   <div class="orbit orbit-one" aria-hidden="true"></div><div class="orbit orbit-two" aria-hidden="true"></div>
+   <div class="rig" id="hero-rig">
+    <div class="rear-screen"><img src="assets/backups.webp" width="1600" height="794" alt="Экран резервных копий ArcSync"></div>
+    <div class="main-screen"><div class="screen-edge"></div><img src="assets/home.webp" width="1600" height="858" fetchpriority="high" alt="Главная ArcSync: библиотека установленных игр, быстрый запуск и статус синхронизации"></div>
+    <div class="game-card card-one"><img src="assets/oblivion.webp" width="256" height="328" alt="" aria-hidden="true"><div><span class="live-dot"></span> В облаке</div></div>
+    <div class="game-card card-two"><img src="assets/motorfest.webp" width="256" height="328" alt="" aria-hidden="true"><div><span class="live-dot"></span> В облаке</div></div>
+    <div class="hero-status"><span class="cloud-symbol" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M9 25h15a6 6 0 0 0 1-12 9 9 0 0 0-17-2 7 7 0 0 0 1 14Z"/><path d="m12 18 3 3 6-6"/></svg></span><span><b>Твой прогресс — с тобой.</b><small>На этом компьютере. И на следующем.</small></span></div>
+   </div>
+   <span class="art-caption">РЕАЛЬНЫЙ ИНТЕРФЕЙС. НИКАКИХ МАКЕТОВ.</span>
   </div>
-
-  <h2>Как это работает</h2>
-  <ol>
-    <li>Скачайте установщик и запустите его. Windows покажет предупреждение SmartScreen — это обычное дело для программ без платной подписи: «Подробнее» → «Выполнить в любом случае».</li>
-    <li>Укажите облачную папку (OneDrive, Google Drive, Яндекс.Диск — или нажмите «Предложить папку», и ArcSync найдёт её сам).</li>
-    <li>Играйте. Сохранения копируются сами, без единого нажатия.</li>
-  </ol>
-
-  <h2>Приватность</h2>
-  <div class="grid">
-    <div class="card"><h3>Своих серверов нет</h3><p>Сохранения уходят только в ту папку, которую выбрали вы. У программы нет облака и нет аккаунтов.</p></div>
-    <div class="card"><h3>Телеметрии нет</h3><p>Никакой статистики, рекламы и слежки. Данные программы лежат на вашем компьютере в %LOCALAPPDATA%\ArcSync.</p></div>
-    <div class="card"><h3>Облако не чистится</h3><p>ArcSync только добавляет и обновляет свои копии. Чужое в облачной папке не трогается и не удаляется.</p></div>
+ </div>
+ <div class="hero-bottom wrap"><span>ТЫ ИГРАЕШЬ. ОН СОХРАНЯЕТ.</span><a href="#experience" aria-label="Прокрутить к интерфейсу"><span class="scroll-line" aria-hidden="true"></span> ЛИСТАЙ НИЖЕ</a><span class="hero-index">01 — 05</span></div>
+</section>
+<section class="cloud-ribbon" aria-label="Совместимые облачные папки"><div class="wrap"><span class="ribbon-label">ТВОЁ ОБЛАКО.<br>ТВОИ ПРАВИЛА.</span><div class="cloud-names"><span>OneDrive</span><span>Google Drive</span><span>Яндекс Диск</span><span>Dropbox</span><span>MEGA</span><span>Nextcloud</span></div></div></section>
+<section id="experience" class="experience section wrap" aria-labelledby="experience-title">
+ <div class="section-top"><p class="eyebrow">01 / ИНТЕРФЕЙС</p><span class="section-aside">СОЗДАН ДЛЯ ИГРЫ. НЕ ДЛЯ РУТИНЫ.</span></div>
+ <div class="heading-row"><h2 id="experience-title">Всё на месте.<br><span class="dim">И ничего лишнего.</span></h2><p>Не папка с ярлыками. Твоя игровая библиотека — с быстрым запуском, бэкапами и прогрессом на виду.</p></div>
+ <div class="gallery-shell">
+  <div class="gallery-toolbar"><div class="gallery-tabs" role="tablist" aria-label="Экраны приложения"><button id="tab-home" type="button" role="tab" aria-selected="true" aria-controls="screen-panel" data-screen="home">Главная</button><button id="tab-library" type="button" role="tab" aria-selected="false" aria-controls="screen-panel" tabindex="-1" data-screen="library">Библиотека</button><button id="tab-backups" type="button" role="tab" aria-selected="false" aria-controls="screen-panel" tabindex="-1" data-screen="backups">Бэкапы</button><button id="tab-game" type="button" role="tab" aria-selected="false" aria-controls="screen-panel" tabindex="-1" data-screen="game">Карточка игры</button><button id="tab-analytics" type="button" role="tab" aria-selected="false" aria-controls="screen-panel" tabindex="-1" data-screen="analytics">Аналитика</button></div><button class="expand" type="button" aria-label="Открыть скриншот крупнее" data-open-gallery><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/></svg></button></div>
+  <div id="screen-panel" class="screen-panel" role="tabpanel" aria-labelledby="tab-home"><img id="gallery-image" src="assets/home.webp" width="1600" height="858" loading="eager" alt="Главная: обложки игр, быстрый запуск и статусы сейвов"><div class="gallery-vignette" aria-hidden="true"></div></div>
+  <div class="gallery-footer"><span id="gallery-caption" aria-live="polite">Вся библиотека. Обложки, запуск и статус сейвов.</span><span class="gallery-counter"><b id="gallery-current">01</b> / 05</span></div>
+ </div>
+</section>
+<section id="cloud" class="cloud-section section" aria-labelledby="cloud-title">
+ <div class="wrap">
+  <div class="section-top"><p class="eyebrow">02 / НЕ ПРОСТО ЛАУНЧЕР</p><span class="section-aside">ПРОГРЕСС ВАЖНЕЕ ПАПОК.</span></div>
+  <div class="cloud-layout">
+   <div class="cloud-copy"><h2 id="cloud-title">Сейвы —<br>в <span class="accent">твоём</span> облаке.<br>Не в нашем.</h2><p>ArcSync находит сохранения и копирует их в выбранную облачную папку. Без аккаунта ArcSync, собственных серверов и подписки.</p><a class="text-link" href="#how">Настроить за три шага <span aria-hidden="true">↗</span></a></div>
+   <div class="sync-visual" aria-label="Схема: сохранения с компьютера передаются в выбранную облачную папку">
+    <div class="sync-orbit" aria-hidden="true"></div><div class="sync-connector" aria-hidden="true"><i></i><i></i><i></i></div>
+    <div class="sync-node pc-node"><svg viewBox="0 0 64 64" aria-hidden="true"><rect x="8" y="12" width="48" height="32" rx="3"/><path d="M24 44v9m16-9v9M19 54h26"/></svg><b>Твой компьютер</b><small>Сохранения игр</small></div>
+    <div class="sync-node cloud-node"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M17 48h30a12 12 0 0 0 1-24 17 17 0 0 0-32-2 13 13 0 0 0 1 26Z"/><path d="m24 34 6 6 12-13"/></svg><b>Твоё облако</b><small>Выбранная папка</small></div>
+    <div class="sync-note"><span class="live-dot"></span> Ты выбираешь, где хранить прогресс.</div>
+   </div>
   </div>
-
-  <h2>Частые вопросы</h2>
-  <details><summary>Это как Steam Cloud? В чём разница?</summary>
-    <p>Steam Cloud работает только с играми из Steam. ArcSync делает то же самое для любых игр: из Steam, GOG, Epic, Microsoft Store и установленных вручную. Игры с лицензией он не трогает — у них своё облако, они просто показываются отдельным списком.</p></details>
-  <details><summary>Нужно ли что-то доустанавливать?</summary>
-    <p>Нет. Внутри установщика уже есть всё необходимое, включая среду выполнения. Нужны только права администратора — без них Windows не даёт записывать сохранения в защищённые папки.</p></details>
-  <details><summary>Куда попадают мои сохранения?</summary>
-    <p>В папку <code>ArcSync</code> внутри вашей облачной папки. Её можно открыть прямо из программы кнопкой «Открыть облачную папку».</p></details>
-  <details><summary>А если игра удалена?</summary>
-    <p>Копии остаются в «Резервных копиях» и в облаке — синхронизация продолжает их защищать, даже если сама игра удалена.</p></details>
-  <details><summary>Почему Windows ругается при установке?</summary>
-    <p>Установщик не подписан платным сертификатом, поэтому SmartScreen предупреждает о «неизвестном издателе». Проверить файл можно по SHA-256: он указан рядом с установщиком на странице релиза.</p></details>
-
-  <h2>Системные требования</h2>
-  <p class="note">Windows 10 (сборка 19041 и новее) или Windows 11 · 64 бита · около 160 МБ на диске · права администратора. Ставить .NET или что-то ещё не нужно.</p>
-
-  <div class="warn">Скачивайте ArcSync только со <a href="https://github.com/Rezerv-EM/ArcSync/releases/latest">страницы релизов на GitHub</a>. Копия из другого места может быть изменена.</div>
-
-  <footer>
-    ArcSync · <a href="https://github.com/Rezerv-EM/ArcSync">GitHub</a> ·
-    <a href="https://github.com/Rezerv-EM/ArcSync/blob/main/README.ru.md">Описание проекта</a> ·
-    <a href="https://github.com/Rezerv-EM/ArcSync/blob/main/EULA.txt">Условия использования</a><br>
-    Программа бесплатная. Исходный код не публикуется, изменённые сборки распространять нельзя.
-  </footer>
-
-</div>
+  <div class="benefit-row"><article><span class="mini-number">01</span><h3>Находит сам.</h3><p>Не нужно искать сейвы в AppData и Documents. ArcSync определяет папки сохранений.</p></article><article><span class="mini-number">02</span><h3>Помогает восстановить.</h3><p>Резервные копии и журнал синхронизаций — в интерфейсе. Верни сохранения на компьютер и продолжай играть.</p></article><article><span class="mini-number">03</span><h3>Лицензии — отдельно.</h3><p>Игры со своим облаком показываются отдельно — без дублирования синхронизации.</p></article></div>
+ </div>
+</section>
+<section class="restore section wrap" aria-labelledby="restore-title">
+ <div class="restore-art"><div class="restore-glow" aria-hidden="true"></div><div class="restore-window"><img src="assets/game.webp" width="1600" height="855" loading="eager" alt="Карточка игры ArcSync с кнопками запуска и синхронизации"></div><div class="restore-detail"><img src="assets/backups.webp" width="1600" height="794" loading="eager" alt="Резервные копии и журнал синхронизаций"></div><span class="restore-tag"><span class="live-dot"></span> ПРОГРЕСС НЕ НАЧИНАЕТСЯ С НУЛЯ.</span></div>
+ <div class="restore-copy"><p class="eyebrow">03 / ПРОДОЛЖАЙ ИГРАТЬ</p><h2>Новый ПК.<br><span class="dim">Та же история.</span></h2><p>Переустановка Windows или другой компьютер — не повод заново проходить любимую игру. Подключи ту же облачную папку и восстанови сохранения.</p><ul class="check-list"><li>Резервные копии по каждой игре</li><li>Восстановление из интерфейса</li><li>Журнал синхронизаций</li><li>Копии остаются после удаления игры</li></ul></div>
+</section>
+<section id="how" class="how-section section" aria-labelledby="how-title"><div class="wrap"><div class="section-top"><p class="eyebrow">04 / НАЧАТЬ ПРОСТО</p><span class="section-aside">ОДНА НАСТРОЙКА. ДАЛЬШЕ — ИГРА.</span></div><h2 id="how-title">Три шага.<br><span class="dim">И можно играть.</span></h2><div class="steps"><article><span class="step-number">01<span>↘</span></span><h3>Установи ArcSync.</h3><p>Скачай установщик из официального релиза на GitHub. Необходимая среда выполнения уже внутри.</p></article><article><span class="step-number">02<span>↘</span></span><h3>Выбери облачную папку.</h3><p>OneDrive, Google Drive, Яндекс Диск или другая папка, которую синхронизирует твой облачный клиент.</p></article><article><span class="step-number">03<span>↗</span></span><h3>Просто играй.</h3><p>ArcSync следит за сохранениями и обновляет копии. Библиотека и бэкапы — в одном приложении.</p></article></div></div></section>
+<section class="privacy section wrap" aria-labelledby="privacy-title"><div class="privacy-lead"><p class="eyebrow">БЕЗ ЛИШНИХ ПОСРЕДНИКОВ</p><h2 id="privacy-title">Твои данные.<br><span class="accent">Твой контроль.</span></h2></div><div class="privacy-list"><article><span>01</span><div><h3>Без серверов ArcSync.</h3><p>Сохранения отправляются в выбранную тобой папку, а не на серверы приложения.</p></div></article><article><span>02</span><div><h3>Без телеметрии и рекламы.</h3><p>Нет рекламных блоков, сбора статистики использования и обязательной регистрации в ArcSync.</p></div></article><article><span>03</span><div><h3>Без очистки твоего облака.</h3><p>Программа обновляет свои копии и не удаляет чужие файлы в облачной папке.</p></div></article></div></section>
+<section id="faq" class="faq section wrap" aria-labelledby="faq-title"><div><p class="eyebrow">05 / ЕЩЁ ПАРА ВОПРОСОВ</p><h2 id="faq-title">Всё по делу.</h2><p class="faq-aside">Остались вопросы?<br><a href="https://github.com/Rezerv-EM/ArcSync/issues">Задать на GitHub ↗</a></p></div><div class="faq-list">
+<details><summary>Это как Steam Cloud?<span aria-hidden="true">+</span></summary><p>Идея похожа: копия прогресса доступна на другом компьютере. Но ArcSync использует твою облачную папку и помогает с играми, у которых нет собственной облачной синхронизации. Лицензии с собственным облаком показываются отдельно.</p></details>
+<details><summary>Какое облако подойдёт?<span aria-hidden="true">+</span></summary><p>OneDrive, Google Drive, Яндекс Диск, Dropbox, MEGA, Nextcloud, Mail.ru — или другая локальная папка, которую синхронизирует облачный клиент. Клиент облака должен быть установлен, настроен и выполнять синхронизацию.</p></details>
+<details><summary>Что нужно для установки?<span aria-hidden="true">+</span></summary><p>Windows 10 (сборка 19041 или новее) либо Windows 11, процессор x64, около 160 МБ места и права администратора. Необходимая среда выполнения включена в установщик.</p></details>
+<details><summary>Почему Windows показывает предупреждение?<span aria-hidden="true">+</span></summary><p>Установщик не подписан платным сертификатом, поэтому SmartScreen может показать «Неизвестный издатель». Это не подтверждение безопасности файла: скачивай только официальный релиз и сравни SHA-256 с опубликованной контрольной суммой перед запуском.</p></details>
+<details><summary>Если удалить игру, копии тоже пропадут?<span aria-hidden="true">+</span></summary><p>Нет. Удалённая игра исчезает из установленной библиотеки, а сохранения остаются в резервных копиях и облаке.</p></details>
+<details><summary>Это бесплатно? Исходники открыты?<span aria-hidden="true">+</span></summary><p>Программа бесплатная, подписка ArcSync не требуется. Исходный код приложения не опубликован. Условия использования и распространения указаны в EULA на GitHub. Место в выбранном облаке предоставляется его провайдером на своих условиях.</p></details>
+</div></section>
+<section class="final-cta" aria-labelledby="final-title"><div class="cta-halo" aria-hidden="true"></div><div class="wrap final-inner"><img class="final-mascot" src="assets/icon.png" width="112" height="112" loading="eager" alt=""><p class="eyebrow">ARCSYNC / ДЛЯ WINDOWS</p><h2 id="final-title">Все игры рядом.<br><span>Прогресс — с тобой.</span></h2><p>Меньше папок. Меньше рутины. Больше игры.</p><a class="button button-main" href="https://github.com/Rezerv-EM/ArcSync/releases/latest">Скачать бесплатно <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-4-4 4 4 4-4M5 16v5h14v-5"/></svg></a><span class="micro">Windows 10 / 11 · x64 · официальный релиз на GitHub</span></div></section>
+</main>
+<footer class="footer wrap"><a class="brand" href="#"><img src="assets/icon.png" width="32" height="32" alt=""><span>ArcSync.</span></a><span>Твоё облако. Твой прогресс.</span><nav aria-label="Юридическая информация"><a href="https://github.com/Rezerv-EM/ArcSync">GitHub ↗</a><a href="https://github.com/Rezerv-EM/ArcSync/blob/main/README.ru.md">Документация</a><a href="https://github.com/Rezerv-EM/ArcSync/blob/main/EULA.txt">Условия</a></nav><p>Изображения и названия игр принадлежат их правообладателям. ArcSync — независимый проект.</p></footer>
+<dialog id="gallery-dialog" aria-labelledby="dialog-title"><div class="dialog-top"><h2 id="dialog-title">ArcSync — Главная</h2><button class="dialog-close" type="button" aria-label="Закрыть скриншот"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div><img id="dialog-image" src="assets/home.webp" width="1600" height="858" alt="Главная ArcSync"><p id="dialog-caption">Вся библиотека. Обложки, запуск и статус сейвов.</p></dialog>
 </body>
 </html>

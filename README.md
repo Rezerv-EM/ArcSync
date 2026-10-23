@@ -1,128 +1,82 @@
 # ArcSync
 
-**English** | [Русский](README.ru.md)
+**Your games. Your progress. Your cloud.**
 
-**Game launcher and save-game sync for Windows.** Like Steam Cloud, but for every game:
-titles from Steam, GOG, Epic and Microsoft Store, plus games installed manually — all in
-one library.
+[Download for Windows](https://github.com/Rezerv-EM/ArcSync/releases/latest) · [Website](https://rezerv-em.github.io/ArcSync/) · [Release history](CHANGELOG.md) · [Русский](README.ru.md)
 
-There are no servers of ours. Your save files go to one place only: the cloud folder
-**you** choose — OneDrive, Google Drive, Dropbox, MEGA, Nextcloud, Yandex.Disk — or any
-other folder that already syncs for you.
+A free Windows game launcher and save-game sync tool. One library for quick launch, backups and playtime. Your saves go to **your own cloud folder**, not ArcSync servers.
 
-[![Version](https://img.shields.io/badge/version-0.1-6C60FF)](../../releases/latest)
-[![Windows](https://img.shields.io/badge/Windows-10%20%7C%2011%20x64-2FD8F0)](#requirements)
-[![Price](https://img.shields.io/badge/price-free-3CCF7A)](#license)
-[![Telemetry](https://img.shields.io/badge/telemetry-none-3CCF7A)](#privacy)
+**Windows 10 / 11 · x64 · Russian & English · No ArcSync subscription · No telemetry**
+
+![ArcSync home — installed games and quick launch](docs/assets/home.webp)
+
+## What's new in 0.1.2
+
+- Switch between Russian and English in Settings without restarting.
+- Game descriptions in the selected language.
+- More accurate save detection: mod-manager data is no longer treated as saves.
+- One game card after deleting a duplicate installation, with save roots associated with the remaining installed copy.
+
+[Full release notes and downloads →](https://github.com/Rezerv-EM/ArcSync/releases/tag/v0.1.2)
 
 ## Features
 
-* **Protects your saves.** ArcSync finds where each game keeps its save files, watches
-  them for changes and copies them into your cloud folder. After a Windows reinstall or on
-  another PC it puts them back exactly where the game expects them.
-* **Builds your library.** Only games that are actually installed on this PC. Launchers,
-  boosters, emulators and other applications never end up in the list.
-* **Launches games** from the game card, tracks play time and remembers when a game was
-  last played.
-* **Keeps backups.** A local archive per game, one-click restore, and a log of what was
-  synced and when.
-* **Stays out of the way.** Lives in the system tray, syncs on events (game launch, game
-  exit, Windows shutdown) and on a schedule. It does not slow games down.
+- Launch installed games from one library and track playtime.
+- Discover saves and back them up to your chosen cloud folder.
+- Restore progress after reinstalling Windows or moving to another PC.
+- Keep backup history and a synchronization log.
+- Work in the system tray, with event-based and scheduled sync.
 
-## Install
+Use OneDrive, Google Drive, Dropbox, Yandex Disk, MEGA, Nextcloud, or another folder managed by your installed cloud client. Games with their own store cloud are shown separately to avoid duplicate synchronization.
 
-1. Download the latest **`ArcSync_Setup_<version>.exe`** from the
-   [Releases](../../releases/latest) page — it is the only file you need.
-2. Run it. Windows will show a blue **SmartScreen** warning — that is expected for
-   software without a paid code-signing certificate. Click **"More info" → "Run anyway"**.
-   See [Verifying the download](#verifying-the-download) to check the file yourself.
-3. On first launch pick your cloud folder (or hit "Suggest folder" — ArcSync will find
-   OneDrive / Google Drive / Yandex.Disk on your disk). Then just play.
+## Interface
 
-You do **not** need to install .NET, the Windows App SDK or anything else — everything is
-bundled in the installer.
+### Library
 
-### Requirements
+![ArcSync — Library](docs/assets/library.webp)
 
-* Windows 10 (build 19041 or newer) or Windows 11, **64-bit**.
-* Administrator rights: without them Windows does not allow writing saves into protected
-  folders ("Documents", AppData). The installer asks for them.
-* About 160 MB of free disk space.
+### Game details
 
-> **Language note:** the application interface, the EULA and this documentation are
-> currently in **Russian**. An English interface is planned.
+![ArcSync — Game details](docs/assets/game.webp)
 
-## How it works
+### Backups
 
-* .NET 8 and WinUI 3, a regular desktop application (not a Microsoft Store package).
-* The tracking engine runs inside the same process as the UI — no separate service to
-  install.
-* A game is identified **by the contents of its folder**, not by its name, so only real
-  games make it into the library.
-* Covers, banners and descriptions come from open sources (Steam, Wikipedia, PCGamingWiki
-  and others) and are cached on disk.
-* Before copying anything, ArcSync checks that the file really is a save file and not a
-  cache, log or mod.
+![ArcSync — Backups](docs/assets/backups.webp)
 
-## Privacy
+### Analytics
 
-* **No telemetry.** No usage statistics, no ads, no data about you or your PC is sent
-  anywhere.
-* Saves go **only** to your cloud folder. ArcSync has no servers of its own.
-* Application data (settings, history, cover cache) stays on your PC in
-  `%LOCALAPPDATA%\ArcSync`.
-* Your cloud folder is never cleaned automatically: ArcSync only adds and updates its own
-  copies. It never touches other people's files.
-* The only outbound requests are for game art and descriptions — and all that is sent is
-  the game title.
+![ArcSync — Analytics](docs/assets/analytics.webp)
 
-## FAQ
+Screenshots show the Russian interface with example data. English is available in Settings.
 
-**Where do my saves go?**
-Into the `ArcSync` folder inside the cloud folder you picked. You can open it from the app
-with the "Open cloud folder" button.
+## Install or update
 
-**What happens if I uninstall a game?**
-Its copies stay in "Backups" and in the cloud, and syncing keeps protecting them.
+1. Download **`ArcSync_Setup_<version>.exe`** from the [latest release](https://github.com/Rezerv-EM/ArcSync/releases/latest).
+2. Compare its SHA-256 with `SHA256SUMS.txt` attached to the **same release**.
+3. Run the installer. To update, use the existing install directory; uninstalling first is not required.
+4. Select your cloud folder on first run. Change language in **Settings → General**.
 
-**A game was not detected. What now?**
-Press "Rescan" in the toolbar — you can install a new game without restarting ArcSync. If
-the game lives in an unusual place, add it manually with "+" in the library.
+.NET and Windows App SDK are bundled. Requires Windows 10 build 19041+ or Windows 11, x64, administrator rights and approximately 160 MB of disk space.
 
-**Does it sync Steam Cloud games?**
-Licensed games keep their own cloud (Steam Cloud, Epic, GOG), so ArcSync leaves them alone
-and shows them in a separate section — this way the library is not cluttered with
-duplicates.
+### Verify your download
 
-**My antivirus complains. Why?**
-The installer is not code-signed (certificates cost money), so SmartScreen and some
-antivirus products warn about an "unknown publisher". You can verify the file by its
-SHA-256 — see below.
-
-## Verifying the download
-
-`SHA256SUMS.txt` sits next to the installer in the release. Compare:
-
-```
+```text
 certutil -hashfile ArcSync_Setup_<version>.exe SHA256
 ```
 
-The hash must match the line in `SHA256SUMS.txt`. Always download ArcSync from this
-repository's Releases page: a copy from anywhere else may have been modified.
+The installer is not code-signed. SmartScreen may warn about an unknown publisher. This warning is not proof of safety: use official release files and verify their checksum.
 
-## Third-party components
+## Privacy and data
 
-The list of libraries, fonts and data sources with their licences is in
-[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+- No telemetry, advertising or mandatory ArcSync account.
+- Saves go only to your selected cloud folder.
+- Local settings, logs and cache live in `%LOCALAPPDATA%\ArcSync` for a normal installation.
+- ArcSync does not automatically clean your cloud folder or delete other files there.
+- Removing a game does not remove saved backups.
+- Artwork and descriptions are fetched from external sources using the game title.
 
-## Feedback
+## Feedback and licensing
 
-Found a bug or have a suggestion? Open an **Issue** in this repository. Please describe
-what you did and what happened; if it is about a specific game, add its name and where it
-is installed.
+Report bugs in [Issues](https://github.com/Rezerv-EM/ArcSync/issues). Include the app version, Windows version and steps to reproduce. Remove personal paths and private information from logs before posting.
 
-## License
-
-ArcSync is free of charge. The source code is not published and remains with the author;
-redistributing modified builds and selling the program are not allowed. The full terms are
-in [EULA.txt](EULA.txt) (Russian).
+ArcSync is free to use. Application source code remains private; this repository contains releases, documentation and the website. See [EULA](EULA.txt) and [third-party notices](THIRD_PARTY_NOTICES.md). Game names and images belong to their respective owners.
