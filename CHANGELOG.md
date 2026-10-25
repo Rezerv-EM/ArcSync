@@ -1,6 +1,65 @@
 # Changelog
 
-# ArcSync 0.1.2
+# ArcSync 0.1.3
+
+**Library**
+- Fixed: a game that was the only item inside a wrapper folder (store or repack folder) could disappear from the library.
+- Fixed: nested and container installations from the 0.1.2 known limitations are now classified correctly; the discovery test suite passes.
+- Fixed: one installation could appear as several games; repack uploader credits in folder names no longer change the game title.
+- Fixed: desktop applications built on UI frameworks (Electron, CEF, Qt) could be listed as games. XNA games are now recognized.
+- Fixed: an uninstalled program could stay in the library because of a registry entry with a similar name.
+- Improved: games installed by Epic Games Launcher are recognized as store licenses with their own cloud, like Steam.
+
+**Launch**
+- Improved: a game managed by a launcher is started through that launcher. Ownership is decided by launcher records, not by names.
+- Improved: newly installed games are found and can be launched right away; the installer's shortcut is used as the launch target.
+
+**Saves**
+- Fixed: a game's install folder, or another program's data with a similar name, could be selected as a save folder.
+- Fixed: folders with only Steam-emulator bookkeeping, uninstaller leftovers, or a folder nested inside another save folder of the same game were treated as separate save folders.
+- Fixed: a large file whose own name marks it as a save was skipped.
+- Improved: quarantined files now get a decision, and a changed file selection is synced as a change.
+- Fixed: updated detection rules now apply to existing installations; one install folder written in different forms is treated as one folder.
+
+**Cloud and restore**
+- Fixed: a merged duplicate card could sync the same saves into a second cloud folder. One game now uses one cloud folder across PCs.
+- Fixed: "Add to mine" created "(from cloud)" copies of files that were already identical.
+- Fixed: "Restore from cloud" could pull abandoned save sets of older layouts into old paths. Only the game's current sets are restored.
+- Fixed: a path recorded under another Windows user is mapped to the current user; a renamed cloud set is found.
+- Fixed: the game sees restored saves after every regular sync, not only after the Restore button.
+- Fixed: online-only cloud files were skipped as links; ArcSync service files and their cloud conflict copies were treated as saves.
+- Improved: a missing cloud copy is reported as a result, not as an error.
+
+**Covers, banners and descriptions**
+- Fixed: art and descriptions could come from another game (a sequel, a remake or a series article). Cover, banner, logo and description now share one game identity, taken first from the game files.
+- Fixed: art was looked up by the repack folder name instead of the game title.
+- Added: community art from SteamGridDB for games without their own store art. The title and release year must match; only the game title is sent.
+- Improved: banners are chosen by picture quality. Small store images and box covers are no longer stretched into a banner when full-size art exists.
+- Improved: cached art is re-checked against the current rules after an update and replaced if it belongs to another game.
+- Fixed: logos of newer Steam games were missing.
+
+**Interface**
+- Improved: smoother page transitions and lighting; the welcome screen opens about twice as fast.
+- Fixed: the engine indicator showed "Engine not responding" while the engine was still starting.
+- Added: Settings → About → Collect diagnostics.
+
+---
+
+**Known limitations**
+- Games that have no art in stores or in the community database still get a banner built from their cover.
+
+Requires Windows 10 (build 19041+) or Windows 11, x64. Runtime dependencies are bundled.
+
+Download **ArcSync_Setup_0.1.3.exe**. An in-place update does not require uninstalling first. Keeping a separate save backup before upgrading is recommended.
+
+The installer is **not code-signed**. SmartScreen may show an unknown publisher; this is not proof of file safety. Download only from this repository and compare with the attached `SHA256SUMS.txt`:
+
+```text
+certutil -hashfile ArcSync_Setup_0.1.3.exe SHA256
+```
+
+---
+## 0.1.2
 
 **Language**
 - Added: Russian / English interface switching in Settings, without restarting.

@@ -10,14 +10,14 @@ A free Windows game launcher and save-game sync tool. One library for quick laun
 
 ![ArcSync home — installed games and quick launch](docs/assets/home.webp)
 
-## What's new in 0.1.2
+## What's new in 0.1.3
 
-- Switch between Russian and English in Settings without restarting.
-- Game descriptions in the selected language.
-- More accurate save detection: mod-manager data is no longer treated as saves.
-- One game card after deleting a duplicate installation, with save roots associated with the remaining installed copy.
+- Fewer wrong entries in the library: wrapper folders, desktop applications and leftover registry entries are handled correctly.
+- More reliable saves and restore: install folders and other programs' data are no longer taken as saves, one game uses one cloud folder, and restore takes only current saves.
+- Covers, banners, logos and descriptions always belong to the same game; full-size community banners for games without store art.
+- Games start through the launcher that manages them; diagnostics can be collected in Settings.
 
-[Full release notes and downloads →](https://github.com/Rezerv-EM/ArcSync/releases/tag/v0.1.2)
+[Full release notes and downloads →](https://github.com/Rezerv-EM/ArcSync/releases/tag/v0.1.3)
 
 ## Features
 
