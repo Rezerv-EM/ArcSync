@@ -1,6 +1,37 @@
 # Changelog
 
-# ArcSync 0.1.3
+# ArcSync 0.1.4
+
+**Startup and performance**
+- Fixed: the engine waited for a full disk scan on the first start of the day and after every update ("Starting" for 1–2 minutes). It now starts in about a second from the known library; the scan runs in the background and the library refreshes only if something changed.
+- Improved: lower CPU use while idle — the running-game check no longer scans all system processes on every refresh when no game is running.
+- Fixed: Activity, the backup journal and Analytics could appear empty while a sync was writing to the journal.
+
+**Saves and sync**
+- Fixed: Sync, Restore, Backup, Archive and Delete did nothing for games whose names produce an invalid command file name (many Cyrillic titles and titles with "?").
+- Fixed: two PCs sharing one cloud folder overwrote each other's installed-games list and launch paths.
+- Fixed: a damaged or partially downloaded cloud copy of app data could replace the local one.
+- Fixed: a file temporarily locked by OneDrive was reported as a sync error. It is now retried and reported only if the lock persists.
+- Improved: local backups made before a cloud restore are kept for 7 days (up to 8) instead of only the last 2.
+- Fixed: games started through a .vbs/.cmd loader had no play session (no playtime, no sync on exit).
+- Fixed: text log files (log.txt, *_log.txt) were treated as saves.
+
+**Library and notifications**
+- Fixed: uninstalled games that only have saves left were moved to the archive and back on every start, producing 15+ "Archived" notifications each time.
+- Fixed: cleared notifications could come back after a restart.
+- Fixed: non-game entries (analytics SDK and iCloud data folders) could stay in the archive and keep showing sync errors. They are removed when there is no installed game and no saves.
+- Improved: bulk events are grouped into one notification; each notification can be dismissed separately.
+
+**Security**
+- Improved: the data folder is protected from changes by programs running without administrator rights.
+- Improved: links open only as http/https; folders open in Explorer without administrator rights; system tools are started by full path; DLLs are not loaded from the current folder; network responses are size-limited.
+
+**Interface**
+- Changed: notifications moved to the sidebar above Settings, with a badge; new glass panel with animations.
+- Improved: highlighted current section, glass card edges, accent hover on buttons and rows, gradient page titles, aligned numbers in statistics and better text contrast in all themes. Accent colors follow the selected theme.
+- Fixed: a card or library row lost its original background after the pointer left it.
+
+## 0.1.3
 
 **Library**
 - Fixed: a game that was the only item inside a wrapper folder (store or repack folder) could disappear from the library.

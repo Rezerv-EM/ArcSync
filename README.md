@@ -10,14 +10,14 @@ A free Windows game launcher and save-game sync tool. One library for quick laun
 
 ![ArcSync home — installed games and quick launch](docs/assets/home.webp)
 
-## What's new in 0.1.3
+## What's new in 0.1.4
 
-- Fewer wrong entries in the library: wrapper folders, desktop applications and leftover registry entries are handled correctly.
-- More reliable saves and restore: install folders and other programs' data are no longer taken as saves, one game uses one cloud folder, and restore takes only current saves.
-- Covers, banners, logos and descriptions always belong to the same game; full-size community banners for games without store art.
-- Games start through the launcher that manages them; diagnostics can be collected in Settings.
+- Much faster start: the engine is ready in about a second; the disk scan runs in the background.
+- Sync buttons work for every game title, cloud data of two PCs no longer overwrite each other, OneDrive file locks are no longer reported as errors.
+- No more notification floods after a restart; non-game entries are cleaned from the archive.
+- Notifications moved to the sidebar with a new animated panel; refreshed look and stronger protection of the data folder.
 
-[Full release notes and downloads →](https://github.com/Rezerv-EM/ArcSync/releases/tag/v0.1.3)
+[Full release notes and downloads →](https://github.com/Rezerv-EM/ArcSync/releases/tag/v0.1.4)
 
 ## Features
 
