@@ -30,6 +30,16 @@ A free Windows game launcher and save-game sync tool. One library for quick laun
 
 Use OneDrive, Google Drive, Dropbox, Yandex Disk, MEGA, Nextcloud, or another folder managed by your installed cloud client. Games with their own store cloud are shown separately to avoid duplicate synchronization.
 
+## Streaming add-ons (alpha)
+
+Play the games of your ArcSync library on other screens. The streaming servers come with ArcSync 0.1.5+ and run only on demand.
+
+| Add-on | What it does |
+|---|---|
+| [ArcSync Cast for Android](https://github.com/Rezerv-EM/ArcSync-AndroidCast) | Your library and PC game streaming on the phone |
+| [ArcSync Cast TV](https://github.com/Rezerv-EM/ArcSync-AndroidCastTV) | The same on Android TV, made for the remote |
+| [ArcSync for PSP](https://github.com/Rezerv-EM/ArcSync-PSPCast) | Your library and PC game streaming on a PlayStation Portable |
+
 ## Interface
 
 ### Library

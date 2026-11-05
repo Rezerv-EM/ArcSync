@@ -30,6 +30,16 @@
 
 Подойдёт OneDrive, Google Drive, Яндекс Диск, Dropbox, MEGA, Nextcloud или другая папка, которую синхронизирует установленный облачный клиент. Игры с собственным облаком магазина показываются отдельно — без дублирования синхронизации.
 
+## Дополнения для стриминга (альфа)
+
+Играйте в игры из библиотеки ArcSync на других экранах. Серверы стриминга входят в ArcSync 0.1.5+ и запускаются только по запросу.
+
+| Дополнение | Что делает |
+|---|---|
+| [ArcSync Cast для Android](https://github.com/Rezerv-EM/ArcSync-AndroidCast) | Библиотека и стриминг игр с ПК на телефон |
+| [ArcSync Cast TV](https://github.com/Rezerv-EM/ArcSync-AndroidCastTV) | То же на Android TV, под пульт |
+| [ArcSync для PSP](https://github.com/Rezerv-EM/ArcSync-PSPCast) | Библиотека и стриминг игр с ПК на PlayStation Portable |
+
 ## Интерфейс
 
 ### Библиотека
