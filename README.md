@@ -10,14 +10,13 @@ A free Windows game launcher and save-game sync tool. One library for quick laun
 
 ![ArcSync home — installed games and quick launch](docs/assets/home.webp)
 
-## What's new in 0.1.5
+## What's new in 0.1.6
 
-- New: stream games to an Android phone, Android TV or PSP and launch them from your library. Streaming servers start only when a device connects and shut down completely afterwards.
-- Games started through a launcher in a sub-folder are tracked again: play sessions, playtime and sync after playing.
-- Single-player games are no longer labeled as online games; saves inside the game folder, in Downloads and in folders named with the series abbreviation ("NFS ...") are found.
-- Games start as the signed-in user instead of with administrator rights; new startup screen; the tray icon is back.
+- Streaming to a phone or Android TV now works with **any graphics card**: AMD, NVIDIA or Intel, with software H.264 when no hardware encoder is usable.
+- Each encoder is checked when a session starts; if HEVC cannot be encoded on this PC, the stream switches to H.264 automatically.
+- Software H.264 keeps a steady 60 fps and uses far less bandwidth on calm scenes.
 
-[Full release notes and downloads →](https://github.com/Rezerv-EM/ArcSync/releases/tag/v0.1.5)
+[Full release notes and downloads →](https://github.com/Rezerv-EM/ArcSync/releases/tag/v0.1.6)
 
 ## Features
 

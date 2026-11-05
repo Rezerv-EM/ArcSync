@@ -1,6 +1,14 @@
 # Changelog
 
-# ArcSync 0.1.5
+# ArcSync 0.1.6
+
+**Streaming to phone and TV — any graphics card**
+- Changed: streaming to a phone or Android TV no longer requires an AMD graphics card. ArcSync uses the encoder of the installed GPU — AMD AMF, NVIDIA NVENC or Intel Quick Sync — and falls back to software H.264 when none of them is usable.
+- Improved: every encoder is tested when a session starts; one that is installed but does not work (disabled laptop GPU, old driver, remote session) is skipped instead of breaking the stream.
+- Changed: if the PC cannot encode HEVC in hardware, the session switches to H.264 automatically and tells the phone or TV which codec to decode. Apps from 0.1 alpha already follow this; [ArcSync Cast 0.1.1](https://github.com/Rezerv-EM/ArcSync-AndroidCast) also reports which codecs the device can decode.
+- Improved: software H.264 uses constant quality with a bitrate cap — a calm desktop costs well under 1 Mbit/s instead of the whole budget — and keeps a steady 60 fps.
+
+## 0.1.5
 
 **New: streaming to phone, TV and PSP (ArcSync Cast)**
 - New: play PC games on an Android phone, an Android TV or a PSP and launch them from your ArcSync library. The installer adds the streaming servers and the device apps (Android, Android TV, PSP) to the ArcSync folder.
