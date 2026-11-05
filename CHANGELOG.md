@@ -1,6 +1,38 @@
 # Changelog
 
-# ArcSync 0.1.4
+# ArcSync 0.1.5
+
+**New: streaming to phone, TV and PSP (ArcSync Cast)**
+- New: play PC games on an Android phone, an Android TV or a PSP and launch them from your ArcSync library. The installer adds the streaming servers and the device apps (Android, Android TV, PSP) to the ArcSync folder.
+- Servers run only on demand: a server starts when a device asks to connect and shuts down completely when the device app exits, after a period of inactivity or when ArcSync closes. While idle, ArcSync only answers the device's discovery/wake request; firewall and network rules for a session are removed after it.
+- New Streaming section in Settings: quality per device (codec, frame rate, bitrate, resolution), idle timeout, Wake-on-LAN and "Stop server now".
+- Optional virtual gamepad driver (ViGEmBus) in setup, so a phone, TV or PSP controller works in games as an Xbox 360 controller.
+
+**Library and play sessions**
+- Fixed: a game whose executable sits in a sub-folder named like a store folder (for example `<game>\platform\steam\game.exe`) was not recognized as running - no play session, no playtime and no sync after playing.
+- Fixed: single-player games could be labeled "Online game - progress stored on server" because a launcher file in the game folder (or the launcher of a bundled Java runtime) was counted as online evidence. Online markers now match whole words, a launcher alone is no evidence, and files of bundled runtimes are ignored.
+- Fixed: launching a game could start another game of the same series, and a running game could be counted as its sibling.
+- Improved: unknown repacks are recognized by the content of the game build (including Ren'Py, RPG Maker, Godot, GameMaker and LOVE exports); engine editors, SDKs and bare runtimes stay out of the library.
+- Fixed: a game with a bundled Java runtime could be hidden as an application.
+
+**Saves and sync**
+- Fixed: saves of games installed in the Downloads folder were never found. Downloads is now treated as a place for games, not as temporary data.
+- Fixed: saves stored inside the game folder (Unreal `Saved\SaveGames\...`, including rotating autosave sub-folders) were not counted or found, also when the game is started through a small launcher in a sub-folder.
+- Fixed: save folders named with the series abbreviation (for example "NFS ..." for "Need for Speed ...") were not matched; save files without an extension are recognized by their content.
+- Improved: games without a known save folder are searched in the background, not only when started from ArcSync.
+- Fixed: an application's browser profile could be taken as a game's save folder and uploaded to the cloud.
+- Fixed: a game could keep showing "Synced" after its cloud copy was deleted; the status is now rechecked against the files that actually exist.
+- Improved: restore, merge and mirror refuse to write through folder links (junctions and symbolic links).
+
+**Launching**
+- Changed: games and launchers start as the signed-in user (like Steam does) instead of inheriting ArcSync's administrator rights; only executables marked "Run as administrator" start elevated.
+- Fixed: "Steam cannot write to the install folder" is repaired automatically before a Steam launch.
+
+**Startup and interface**
+- New startup screen that shows the real startup stages and how long each took; a startup error is explained in plain words, with a technical report that can be copied.
+- Fixed: the tray icon was not created on some systems (a known limitation of 0.1.4).
+
+## 0.1.4
 
 **Startup and performance**
 - Fixed: the engine waited for a full disk scan on the first start of the day and after every update ("Starting" for 1–2 minutes). It now starts in about a second from the known library; the scan runs in the background and the library refreshes only if something changed.

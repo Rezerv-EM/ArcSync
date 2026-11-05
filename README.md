@@ -10,20 +10,21 @@ A free Windows game launcher and save-game sync tool. One library for quick laun
 
 ![ArcSync home — installed games and quick launch](docs/assets/home.webp)
 
-## What's new in 0.1.4
+## What's new in 0.1.5
 
-- Much faster start: the engine is ready in about a second; the disk scan runs in the background.
-- Sync buttons work for every game title, cloud data of two PCs no longer overwrite each other, OneDrive file locks are no longer reported as errors.
-- No more notification floods after a restart; non-game entries are cleaned from the archive.
-- Notifications moved to the sidebar with a new animated panel; refreshed look and stronger protection of the data folder.
+- New: stream games to an Android phone, Android TV or PSP and launch them from your library. Streaming servers start only when a device connects and shut down completely afterwards.
+- Games started through a launcher in a sub-folder are tracked again: play sessions, playtime and sync after playing.
+- Single-player games are no longer labeled as online games; saves inside the game folder, in Downloads and in folders named with the series abbreviation ("NFS ...") are found.
+- Games start as the signed-in user instead of with administrator rights; new startup screen; the tray icon is back.
 
-[Full release notes and downloads →](https://github.com/Rezerv-EM/ArcSync/releases/tag/v0.1.4)
+[Full release notes and downloads →](https://github.com/Rezerv-EM/ArcSync/releases/tag/v0.1.5)
 
 ## Features
 
 - Launch installed games from one library and track playtime.
 - Discover saves and back them up to your chosen cloud folder.
 - Restore progress after reinstalling Windows or moving to another PC.
+- Stream games to an Android phone, Android TV or PSP (servers run only on demand).
 - Keep backup history and a synchronization log.
 - Work in the system tray, with event-based and scheduled sync.
 
